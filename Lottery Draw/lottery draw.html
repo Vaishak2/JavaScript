@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javacript-Q2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <style>
+        .main-container {
+            background-color: rgb(15, 15, 15);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            cursor: none;
+
+        }
+
+        .head h2 {
+            color: rgb(0, 124, 85);
+            font-family: cursive;
+            font-weight: bolder;
+            padding-bottom: 30px;
+
+
+        }
+
+        .display input {
+            width: 250px;
+            height: 100px;
+            font-family: sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 20px;
+            border: 2px solid rgb(123, 120, 120);
+            background-color: #bafce6;
+
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container button {
+            margin: 20px;
+            width: 100px;
+            height: 50px;
+            background-color: #00ffaa;
+            color: rgb(255, 255, 255);
+            border: 1px groove rgb(123, 120, 120);
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        h4 {
+            font-family: sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            color: rgb(218, 5, 5);
+            padding-bottom: 10px;
+        }
+
+        .result-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            padding: 20px;
+        }
+
+
+        .neonText {
+            color: #fff;
+            text-shadow:
+                0 0 7px #fff,
+                0 0 10px #fff,
+                0 0 21px #fff,
+                0 0 42px #00ffaa,
+                0 0 82px #0fa,
+                0 0 92px #0fa,
+                0 0 102px #0fa,
+                0 0 151px #0fa;
+        }
+
+        .cursor_1 {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 1px solid white;
+            border-radius: 50%;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: .1s;
+            
+
+        }
+
+        .cursor_2 {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 50%;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="cursor_1" id="curs"></div>
+    <div class="cursor_2"></div>
+    <div class="main-container">
+        <div class="head">
+            <h2 class="neonText">LOTTERY DRAW</h2>
+        </div>
+
+        <div class="display">
+            <input type="number" placeholder="Lottery No" class="screen" id="displayVal">
+        </div>
+        <div class="container">
+            <!-- <button id="btn">PICK ONE</button> -->
+            <button type="button" id="btn" class="btn btn-primary" data-toggle="modal" onclick="getRandom()"
+                data-target=".bd-example-modal-sm">PICK ONE</button>
+
+            <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <h5 id="modelResult"></h5>
+                        Contact Details<br>Full Name:<br>Contact No:<br>Address:
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="result" class="result-container"> <!--Result area-->
+            <h4 id="winner"></h4>
+
+        </div>
+        
+
+    </div>
+    <script src="./app33.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

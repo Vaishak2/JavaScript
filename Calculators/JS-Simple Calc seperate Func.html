@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Simple Clac</title>
+
+    <script>
+
+        // Function for Calculation
+
+        function Calc() {
+
+            var val1 = parseInt(document.getElementById('input1').value);
+            var val2 = parseInt(document.getElementById('input2').value);
+            var opr = document.getElementById('operator').value;
+            var out = document.getElementById('result').value;
+
+            function add() {
+                document.getElementById('result').value = val1 + val2;
+            
+            }
+            function sub() {
+                document.getElementById('result').value = val1 - val2;
+        
+            }
+            function mulFunc() {
+                document.getElementById('result').value = val1 * val2;
+                
+            }
+            function modulas() {
+                document.getElementById('result').value = val1 / val2;
+
+            }
+
+            if (opr === "+") {
+                var out = add();
+            }
+            if (opr === "-") {
+                var out = sub();
+            }
+            if (opr === "x") {
+                var out = mulFunc();
+            }
+            if (opr === "/") {
+                var out = modulas();
+            }
+
+        }
+
+        // Function for Clear Button
+
+        clearFunc = () => {
+
+            input1.value = ("");
+            input2.value = ("");
+
+            // input1.value = input1.value.toString().slice(0, -1);
+            // input2.value = input1.value.toString().slice(0, -1);
+        }
+
+
+    </script>
+    <style>
+        body {
+            background-color: rgb(75, 72, 72);
+            margin: 0px;
+            height: 100vh;
+            font-family: sans-serif;
+
+
+        }
+
+        .container {
+
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 350px;
+            border-radius: 50px;
+            background-color: blanchedalmond;
+            padding: 50px;
+
+        }
+
+        .calculator {
+            display: flex;
+            justify-content: center;
+            margin-top: 80px;
+
+        }
+
+        .container input {
+            margin-top: 10px;
+            padding: 10px;
+            border: 2px groove rgb(90, 87, 92);
+            border-radius: 10px;
+            background-color: aquamarine;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+
+        }
+
+        .btn {
+
+            margin-right: 10px;
+        }
+
+        .btn select {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px groove rgb(90, 87, 92);
+            text-align: center;
+        }
+
+        .btn button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px groove rgb(90, 87, 92);
+            text-align: center;
+        }
+        .btn :hover{
+            background-color:  aquamarine;
+            transition: 0.3s ease-in-out;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="container">
+            <h2><b><u>INPUT CALTRIX</u></b></h2>
+            <label>INPUT VALUE 1</label>
+            <input type="number" id="input1"><br>
+
+            <label>INPUT VALUE 2</label>
+            <input type="number" id="input2"><br>
+            <div class="btn">
+                <select id="operator">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="x">x</option>
+                    <option value="/">/</option>
+
+                </select>
+
+                <button id="Clear" onclick="clearFunc()">C</button>
+                <button id="Calc" onclick="Calc()">=</button>
+            </div><br>
+            <label>OUTPUT VALUE</label>
+            <input type="text" id="result">
+
+
+        </div>
+    </div>
+</body>
+
+</html>
